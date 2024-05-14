@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+    <div class="info">
+        Em criptografia, a Cifra de César (Caesar Cipher) é uma das mais simples e conhecidas técnicas de criptografia. É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra, que se apresenta no alfabeto abaixo dela um número fixo de vezes. Por exemplo, com uma troca de três (ou "n") posições e continua tendo aplicações modernas, como no sistema ROT13.
+    </div>
+
+    <div class="cipher-container">
+        <a href="/encode"></a>
+            <div class="cipher-container-item">
+                <img class="cipher-image" src="{{ url_for('static', filename='images/lock.png') }}">
+            </div>
+        <a href="/decode"></a>
+    </div>
 {% endblock %}
