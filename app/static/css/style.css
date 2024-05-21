@@ -1,10 +1,10 @@
 :root {
-    --color-primary: #890504;
-    --color-primary-hover: #FF0000;
-    --color-primary-dark: #990100;
+    --color-primary: #1D2748;
+    --color-primary-hover: #14308b;
+    --color-primary-dark: #1B272C;
 
-    --color-text: #FFF0F3;
-    --color-background: #220901;
+    --color-text: #cac0f7;
+    --color-background: #0D0A0D;
 }
 
 body {
@@ -17,9 +17,11 @@ body {
 
 .alert {
     font-size: 1rem;
-    padding: 2px;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 8px;
     color: var(--color-text);
-    background-color: red; 
+    background-color: rgb(223, 39, 39); 
 }
 
 .info {
@@ -42,7 +44,12 @@ body {
     border-width: 2px;
     border-radius: 10px;
     border-style: solid;
-    border-color: var(--color-text);
+    border-color: var(--color-primary);
+}
+
+.cipher-container-item:hover {
+    background-color: #080608;
+    border-color: var(--color-primary-hover);
 }
 
 .cipher-image {
@@ -57,5 +64,5 @@ body {
 }
 
 .header-logo {
-    height: 150px;
+    height: 200px;
 }

@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, flash
+from app.encode import encode_message
 
 def create_app():
     #Create and configure the app
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'afsfjefjtelesviadofuasdbf'
+    app.config['SECRET_KEY'] = 'afjtelesviadofuasf'
 
     @app.route('/')
     def home(name='Home'):
@@ -12,13 +13,19 @@ def create_app():
     @app.route("/encode", methods=('GET', 'POST'))
     def encode(name='Encode'):
         if request.method == 'POST':
-            cipher_key = request.form['cipher_key']
+            try:
+                 cipher_key = int(request.form['cipher_key'])
+            except:
+                cipher_key = 0
+
             message = request.form['message']
 
-            if not cipher_key:
-                flash('A chave é obrigatória...')
+            if cipher_key == 0:
+                flash("A Chave deve ser um Número!")
+            elif not cipher_key:
+                flash('A Chave é Obrigatória...')
             elif not message:
-                flash('A mensagem é necessária...')
+                flash('A Mensagem é Obrigatória...')
             else:
                 flash('ENCODE')
 
